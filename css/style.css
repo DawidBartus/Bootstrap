@@ -20,3 +20,6 @@ body {
   padding: 10px;
   box-sizing: border-box;
 }
+.btn-gap {
+  margin: 4px;
+}

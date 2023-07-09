@@ -1,3 +1,16 @@
+// Nav bar
+
+const navBar = document.getElementById("navLinks");
+const isActive = document.querySelectorAll(".isActive");
+
+const changeActive = (e) => {
+  isActive.forEach((item) => item.classList.remove("active"));
+
+  e.target.classList.add("active");
+};
+
+navBar.addEventListener("click", changeActive);
+
 // Reservation form
 
 const startDate = document.getElementById("startVisit");
@@ -17,6 +30,8 @@ const dealWitIt = (event) => {
   const {
     email,
     phone,
+    name,
+    breed,
     startVisit,
     endVisit,
     puppy,
@@ -29,6 +44,8 @@ const dealWitIt = (event) => {
   const reservationInfo = {
     email: email.value,
     phone: phone.value,
+    name: name.value,
+    breed: breed.value,
     start: startVisit.value,
     end: endVisit.value,
     isPuppy: puppy.checked,

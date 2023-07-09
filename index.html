@@ -50,20 +50,38 @@
         class="collapse navbar-collapse justify-content-end text-center"
         id="navbarSupportedContent"
       >
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#hotel"
-              >Hotel <span class="sr-only">(current)</span></a
+        <ul class="navbar-nav" id="navLinks">
+          <li class="nav-item">
+            <a class="nav-link active isActive" href="#hotel"
+              >Hotel <span class="sr-only"></span
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link isActive" href="#priceList">Cennik</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle isActive"
+              href="#"
+              id="contactNav"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
+              Kontakt
+            </a>
+            <div class="dropdown-menu" aria-labelledby="contactNav">
+              <p class="dropdown-item">Telefon:</p>
+              <a class="dropdown-item" href="tel:+48605190071">+48 605190071</a>
+              <a class="dropdown-item" href="tel:+48605190071">+48 605190071</a>
+              <div class="dropdown-divider"></div>
+              <p class="dropdown-item">Mail:</p>
+              <a class="dropdown-item" href="mailto:">Mail@mail.pl</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#priceList">Cennik</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Kontakt</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#reservation">Rezerwacja</a>
+            <a class="nav-link isActive" href="#reservation">Rezerwacja</a>
           </li>
         </ul>
       </div>
@@ -395,115 +413,202 @@
         </div>
       </div>
       <!-- reservation form -->
-      <h2 class="text-center pt-5 pb-3 mx-3" id="reservation">
-        Zarezerwuj pobyt twojego pupila wcześniej:
-      </h2>
-      <div class="container d-flex justify-content-center">
-        <form id="reservationForm" class="mb-3" style="width: 320px">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="E-mail"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input
-              type="text"
-              class="form-control"
-              id="phone"
-              placeholder=" +48 000 000 000"
-              required
-            />
-          </div>
-          <div class="row mb-3">
-            <div class="col">
-              <label for="startVisit">Początek wizyty</label>
+      <div
+        class="container text-center justify-content-center pt-4"
+        id="reservation"
+      >
+        <h2 class="text-center pt-5 pb-3 mx-3">
+          Zarezerwuj pobyt twojego pupila wcześniej:
+        </h2>
+        <div class="container d-flex justify-content-center">
+          <form id="reservationForm" class="mb-3" style="width: 320px">
+            <div class="form-group">
+              <label for="email">Email</label>
               <input
-                type="date"
+                type="email"
                 class="form-control"
-                placeholder="DD.MM.RRRR"
-                id="startVisit"
+                id="email"
+                placeholder="E-mail"
                 required
               />
             </div>
-            <div class="col">
-              <label for="endVisit">Koniec wizyty</label>
+            <div class="form-group">
+              <label for="phone">Telefon</label>
               <input
-                type="date"
+                type="text"
                 class="form-control"
-                placeholder="DD.MM.RRRR"
-                id="endVisit"
+                id="phone"
+                placeholder="Numer telefonu"
                 required
               />
             </div>
+            <div class="form-group">
+              <label for="name">Imię</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Imię"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="breed">Rasa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="breed"
+                placeholder="Husky"
+                required
+              />
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <label for="startVisit">Początek wizyty</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="DD.MM.RRRR"
+                  id="startVisit"
+                  required
+                />
+              </div>
+              <div class="col">
+                <label for="endVisit">Koniec wizyty</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="DD.MM.RRRR"
+                  id="endVisit"
+                  required
+                />
+              </div>
+            </div>
+            <p class="h5 text-center">Wiek zwierzaka:</p>
+            <div class="d-flex justify-content-around mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="age"
+                  id="puppy"
+                  checked
+                />
+                <label class="form-check-label" for="puppy"> Szczeniak </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="age"
+                  id="adult"
+                />
+                <label class="form-check-label" for="adult"> Dorosły </label>
+              </div>
+              <div class="form-check disabled">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="age"
+                  id="senior"
+                />
+                <label class="form-check-label" for="senior"> Starszy </label>
+              </div>
+            </div>
+            <p class="h5 text-center">Dodatkowo</p>
+            <div class="d-flex justify-content-around mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="transport"
+                />
+                <label class="form-check-label" for="transport">
+                  Transport
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="food"
+                />
+                <label class="form-check-label" for="food"> Wyżywienie </label>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="formSubmitButton"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d41625.95054755722!2d19.979596!3d49.302505000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715f252cf723fc1%3A0x1f7fce18a4fc9c4c!2sZOO%20Hotel!5e0!3m2!1spl!2spl!4v1688905933938!5m2!1spl!2spl"
+          style="border: 0; height: 300px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="container-fluid"
+        ></iframe>
+      </div>
+      <div
+        style="
+          width: 100%;
+          height: 1px;
+          background-color: rgba(145, 145, 145, 0.514);
+        "
+        class="mt-4"
+      ></div>
+      <div
+        class="pt-4 bg-light d-flex justify-content-center text-center"
+        id="contact"
+      >
+        <div
+          class="d-flex container-fluid justify-content-around"
+          style="max-width: 1200px"
+        >
+          <div>
+            <p>Skontaktuj się z nami:</p>
+            <a href="mailto:" class="btn text-primary">Mail@mail.pl</a>
+            <br />
+            <a href="tel:+48603407507" class="btn text-primary">
+              +48 603 407 507</a
+            >
+            <br />
+            <a href="tel:+48605190071" class="btn text-primary">
+              +48 605 190 071</a
+            >
+            <br />
           </div>
-          <p class="h5 text-center">Wiek zwierzaka:</p>
-          <div class="d-flex justify-content-around mb-3">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="age"
-                id="puppy"
-                checked
-              />
-              <label class="form-check-label" for="puppy"> Szczeniak </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="age"
-                id="adult"
-              />
-              <label class="form-check-label" for="adult"> Dorosły </label>
-            </div>
-            <div class="form-check disabled">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="age"
-                id="senior"
-              />
-              <label class="form-check-label" for="senior"> Starszy </label>
-            </div>
-          </div>
-          <p class="h5 text-center">Dodatkowo</p>
-          <div class="d-flex justify-content-around mb-3">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="transport"
-              />
-              <label class="form-check-label" for="transport">
-                Transport
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="food"
-              />
-              <label class="form-check-label" for="food"> Wyżywienie </label>
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary" id="formSubmitButton">
-              Submit
-            </button>
-          </div>
-        </form>
+
+          <address>
+            ZooHotel Zakopane <br />
+            Walkosze 27 <br />
+            34-500 Zakopane
+          </address>
+        </div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          height: 1px;
+          background-color: rgba(145, 145, 145, 0.514);
+        "
+        class="text-center"
+      >
+        <p>@ 2023 Copyright Dawid Bartuś</p>
       </div>
     </main>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
