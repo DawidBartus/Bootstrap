@@ -16,6 +16,7 @@ navBar.addEventListener("click", changeActive);
 const startDate = document.getElementById("startVisit");
 const endDate = document.getElementById("endVisit");
 const submit = document.getElementById("reservationForm");
+const successAlert = document.getElementById("alertWindow");
 
 let today = new Date();
 
@@ -25,7 +26,7 @@ startDate.value = formattedToday;
 startDate.min = formattedToday;
 endDate.min = startDate.value;
 
-const dealWitIt = (event) => {
+const dealWitIt = async (event) => {
   event.preventDefault();
   const {
     email,
@@ -46,16 +47,30 @@ const dealWitIt = (event) => {
     phone: phone.value,
     name: name.value,
     breed: breed.value,
-    start: startVisit.value,
-    end: endVisit.value,
+    startVisit: startVisit.value,
+    endVisit: endVisit.value,
     isPuppy: puppy.checked,
     isAdult: adult.checked,
     isSenior: senior.checked,
     transport: transport.checked,
     food: food.checked,
   };
-  const jsonReservationInfo = JSON.stringify(reservationInfo);
-  console.log(jsonReservationInfo);
+
+  await axios
+    .post("http://localhost:3000/reservation", reservationInfo)
+    .then(() => {
+      successAlert.classList.remove("d-none");
+      setTimeout(() => {
+        successAlert.classList.add("alertFadeOut");
+        event.target.reset();
+      }, 1000);
+      setTimeout(() => {
+        successAlert.classList.add("d-none");
+        successAlert.classList.remove("alertFadeOut");
+      }, 2000);
+      event.target.reset();
+    })
+    .catch((err) => console.log(err));
 };
 
 const submitForm = submit.addEventListener("submit", dealWitIt);

@@ -23,6 +23,7 @@
       integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
       crossorigin="anonymous"
     />
+
     <script
       src="https://kit.fontawesome.com/7b4ac5dfbb.js"
       crossorigin="anonymous"
@@ -421,7 +422,13 @@
           Zarezerwuj pobyt twojego pupila wcześniej:
         </h2>
         <div class="container d-flex justify-content-center">
-          <form id="reservationForm" class="mb-3" style="width: 320px">
+          <form
+            id="reservationForm"
+            class="mb-3"
+            style="width: 320px"
+            action="/reservation"
+            method="POST"
+          >
             <div class="form-group">
               <label for="email">Email</label>
               <input
@@ -544,8 +551,15 @@
                 class="btn btn-primary"
                 id="formSubmitButton"
               >
-                Submit
+                Wyślij
               </button>
+              <div
+                class="alert alert-success mt-2 d-none alertWindow"
+                role="alert"
+                id="alertWindow"
+              >
+                Wiadomość została wysłana, wkrótce otrzymasz potwierdzenie!
+              </div>
             </div>
           </form>
         </div>
@@ -624,6 +638,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
