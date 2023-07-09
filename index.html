@@ -399,7 +399,7 @@
         Zarezerwuj pobyt twojego pupila wcześniej:
       </h2>
       <div class="container d-flex justify-content-center">
-        <form class="mb-3" style="width: 320px">
+        <form id="reservationForm" class="mb-3" style="width: 320px">
           <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -407,6 +407,7 @@
               class="form-control"
               id="email"
               placeholder="E-mail"
+              required
             />
           </div>
           <div class="form-group">
@@ -416,23 +417,28 @@
               class="form-control"
               id="phone"
               placeholder=" +48 000 000 000"
+              required
             />
           </div>
           <div class="row mb-3">
             <div class="col">
-              <label for="">Początek wizyty</label>
+              <label for="startVisit">Początek wizyty</label>
               <input
-                type="text"
+                type="date"
                 class="form-control"
                 placeholder="DD.MM.RRRR"
+                id="startVisit"
+                required
               />
             </div>
             <div class="col">
-              <label for="">Koniec wizyty</label>
+              <label for="endVisit">Koniec wizyty</label>
               <input
-                type="text"
+                type="date"
                 class="form-control"
                 placeholder="DD.MM.RRRR"
+                id="endVisit"
+                required
               />
             </div>
           </div>
@@ -444,7 +450,6 @@
                 type="radio"
                 name="age"
                 id="puppy"
-                value="option1"
                 checked
               />
               <label class="form-check-label" for="puppy"> Szczeniak </label>
@@ -455,7 +460,6 @@
                 type="radio"
                 name="age"
                 id="adult"
-                value="option2"
               />
               <label class="form-check-label" for="adult"> Dorosły </label>
             </div>
@@ -465,127 +469,40 @@
                 type="radio"
                 name="age"
                 id="senior"
-                value="option3"
               />
               <label class="form-check-label" for="senior"> Starszy </label>
             </div>
           </div>
           <p class="h5 text-center">Dodatkowo</p>
-          <div class="d-flex justify-content-around mb-3"><div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="transport">
-            <label class="form-check-label" for="transport">
-              Transport
-            </label>
+          <div class="d-flex justify-content-around mb-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="transport"
+              />
+              <label class="form-check-label" for="transport">
+                Transport
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="food"
+              />
+              <label class="form-check-label" for="food"> Wyżywienie </label>
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="food">
-            <label class="form-check-label" for="food">
-              Wyżywienie
-            </label>
-          </div></div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" id="formSubmitButton">
+              Submit
+            </button>
           </div>
         </form>
       </div>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit,
-      rem nihil omnis, numquam illo quas atque minus animi dolorum molestias
-      pariatur dicta dolorem vitae eveniet aut nemo earum exercitationem eos.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. A quos autem
-      veniam laboriosam! Laudantium eos necessitatibus ipsum eligendi non?
-      Pariatur excepturi architecto eius laudantium veritatis fugit iusto dicta
-      hic totam? Eum ut, eligendi quis omnis veniam laudantium iure officiis
-      minima iste odio dicta autem veritatis optio perferendis! Voluptatibus,
-      quod. Modi libero eum blanditiis magni quas quisquam iste ab velit ex.
-      Veniam in nam molestias, tempora, eius itaque iure modi neque
-      exercitationem ullam hic, iusto ipsum eaque sint eos. Quas enim
-      exercitationem molestiae sed aliquid ducimus sint perferendis sunt fuga
-      ratione! Nulla vel quibusdam aut tenetur quo culpa libero enim qui
-      dolores, dicta impedit dolorem quisquam ducimus debitis perferendis sunt
-      aliquid porro facilis obcaecati? A doloribus itaque veniam. Voluptatem,
-      quam ab? Porro nobis necessitatibus perferendis ipsam suscipit aspernatur
-      iste nesciunt. Blanditiis, eius. Aspernatur neque officia tenetur atque
-      minus, quis quo blanditiis dolor quasi, voluptas odit? Consectetur quo
-      commodi reiciendis recusandae ad. Labore soluta vel suscipit voluptatibus
-      ipsam distinctio inventore, quas nobis reiciendis praesentium,
-      consectetur, ipsa corrupti quidem ut! Perferendis saepe mollitia debitis
-      nam, omnis, reprehenderit repellat provident ea, obcaecati quam impedit.
-      Assumenda reprehenderit provident recusandae! Repellendus officia vel
-      voluptatum rem nihil ut, autem aliquid excepturi quo! Quam quisquam
-      commodi quasi. Cupiditate, voluptas. Sapiente suscipit ipsam maiores
-      commodi ex repellat aspernatur facilis. Repudiandae temporibus veniam
-      laborum officia adipisci expedita incidunt natus, alias numquam voluptates
-      consequatur fugiat eos iste error ipsum itaque totam molestiae! Blanditiis
-      accusamus repellat, ipsum veniam odit perferendis error porro. Laboriosam
-      dicta voluptatem commodi ab possimus aperiam. Sunt sit debitis temporibus
-      ipsa rerum dicta nisi officiis nobis non aliquam totam unde suscipit
-      nesciunt est ab, tempore placeat incidunt minus laudantium! Dicta officia
-      sunt cum et assumenda, dolorum animi explicabo exercitationem, voluptatem
-      neque, recusandae eum earum laboriosam atque sed veniam. Quaerat suscipit
-      provident repellendus, praesentium rerum minima similique officiis ab
-      deleniti. Consectetur commodi explicabo perferendis repellendus nisi
-      reprehenderit aspernatur corporis consequuntur vero ut alias molestiae
-      aliquid accusamus fuga quia provident, quasi asperiores inventore omnis ea
-      quo! Fuga, maxime veniam? Repudiandae, laudantium? Provident quisquam
-      illum ex esse nam dolores blanditiis ipsam velit, consectetur quibusdam
-      nostrum quae similique eaque explicabo vero tempora incidunt culpa laborum
-      exercitationem repellat cumque? Laborum repellendus blanditiis cum harum.
-      Illo quis laborum minus reiciendis recusandae ab in placeat ipsum autem
-      deleniti culpa perspiciatis omnis cum eveniet, maiores est aut tempore
-      similique, eius ullam illum qui consequatur natus corporis? Consectetur.
-      Consequatur, velit magni asperiores nobis mollitia dolores! Nisi placeat
-      voluptatibus veritatis quia illo facilis earum commodi porro doloribus
-      amet. Ab perspiciatis minima, delectus corrupti qui nihil necessitatibus
-      id alias blanditiis. Commodi nihil dicta laboriosam! Ipsa at hic atque
-      consequuntur odio incidunt quae dolorum, blanditiis perspiciatis
-      perferendis earum voluptatibus magni quos quaerat in deleniti quo,
-      quisquam laudantium. Veniam natus odit possimus! Ipsa accusantium fuga
-      sapiente tenetur nulla non mollitia repellat odit, sit fugiat placeat
-      inventore. Quisquam dolore aliquid voluptatum praesentium eius omnis,
-      totam, officia porro aspernatur, sed voluptas! Ipsum, magni amet? Dolorem,
-      vel, consequatur quod, illo reprehenderit neque molestias quidem
-      consequuntur veniam cumque tempora at ipsam! Quos quaerat dignissimos
-      architecto eum quam! Aliquam repellendus quia quidem! Amet dolorem
-      obcaecati temporibus libero! Iusto alias, ullam doloremque quae
-      consequuntur distinctio repudiandae tempora quod excepturi sapiente dolore
-      culpa suscipit commodi eum nobis nemo accusamus, recusandae deserunt
-      repellat! Ut voluptatem dolore amet pariatur ipsam harum! Sapiente ab
-      adipisci, fugit animi hic molestias enim quisquam nobis, voluptatibus quas
-      debitis incidunt iusto explicabo, exercitationem corrupti earum facilis
-      nostrum labore magni. Consequuntur libero laudantium eligendi ipsa
-      suscipit voluptatibus? Aspernatur consequuntur explicabo sed, itaque
-      consequatur doloremque quis ullam placeat, saepe molestiae ipsa ex amet ea
-      eveniet eaque delectus temporibus, culpa alias ab et maxime veniam nam
-      dolor! Recusandae, eius. Obcaecati, cupiditate aperiam quos nisi soluta
-      ipsa. Non ut, quidem tenetur totam nihil illo aliquid ratione saepe
-      voluptatibus soluta. Fugiat rem id ut neque distinctio voluptas tempora
-      laudantium praesentium ab! Mollitia nulla vero est amet ullam eligendi
-      eaque, quasi, architecto sed et voluptatum nam sequi corrupti id nihil
-      ratione cumque nemo, fugiat eos iusto explicabo veniam. Deleniti ea
-      blanditiis nam? Eum ea nobis asperiores expedita numquam mollitia quia
-      illum error rerum neque, explicabo maiores repellendus unde quasi non
-      harum consequuntur possimus consectetur architecto beatae obcaecati
-      tempora laborum? Possimus, quaerat mollitia. Officia voluptate veniam enim
-      deleniti quam earum quibusdam eum libero doloribus minima modi voluptates
-      qui vero dolorem omnis porro culpa dicta ab illum, placeat aliquam quasi
-      unde. Ipsam, ab consectetur. Odio laudantium quia quisquam iusto.
-      Laudantium similique deleniti unde fugit totam sit fugiat aut modi ipsum
-      odio voluptas error veniam iste iure eius quia incidunt assumenda iusto,
-      quibusdam commodi inventore. Perspiciatis, saepe? Enim quam exercitationem
-      optio vero ad, fugiat id commodi laboriosam repudiandae facilis. Obcaecati
-      iste incidunt ex, labore recusandae non? Possimus aut provident
-      recusandae, maiores fugiat eius obcaecati nobis? Provident aliquid in
-      asperiores totam, quas repudiandae optio doloribus maiores ratione
-      excepturi neque eius dolorum repellat suscipit nobis? Mollitia odio saepe
-      provident voluptates nobis corrupti laborum id commodi neque. Deserunt? Ut
-      ullam voluptas enim corrupti blanditiis ducimus sit cupiditate nulla
-      assumenda reprehenderit molestias asperiores, inventore, a consequuntur
-      fugit accusantium accusamus totam deserunt quae, ipsam delectus et
-      recusandae dignissimos ab! Modi. Cum quo, incidunt velit esse nostrum
-      consectetur ratione omnis magni id fuga. Velit repudiandae laborum fugit
-      eum veritatis ipsum voluptatum est ex rerum deserunt, dicta ab voluptate
-      molestias corporis amet. Vero, facilis nemo sapiente nam tempore veritatis
-      optio atque officiis repellat earum expedita at consequuntur omnis aliquid
-      et, ab commodi deleniti! Maxime corporis nulla quam non aut. Officia, quia
-      eum!
     </main>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
